@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('symbol');
             $table->unsignedBigInteger('security_type_id');
 
-            $table->foreign('security_type_id')->on('security_types')->references('id');
+            $table->foreign('security_type_id')->references('id')->on('security_types');
 
         });
     }

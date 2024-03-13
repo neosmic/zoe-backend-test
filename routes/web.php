@@ -1,5 +1,7 @@
 <?php
 
+use App\Jobs\SyncSecurityPrices;
+use App\Services\SecurityPricesSync;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    SecurityPricesSync::dispatch();
+    return "Dispatched";
 });
